@@ -19,6 +19,31 @@
     polaris-chip {
       margin: 16px;
     }
+    .wrapper{
+        background-color: orange;
+        margin:16px;
+        padding:8px;
+        
+        text-align:center;
+        
+      }
+    #card-title{
+        color:blue;
+        text-align:center;
+        font-family:Sans-serif;
+        
+    }
+    .card-image{
+        height: 40vh;
+        width: 200px;
+        padding: 25px;
+    }
+
+    .card-text{
+        color: blue;
+        text-align:center;
+        overflow:auto;
+    }
   </style>
   <title>polaris-chip / my-card</title>
 </head>
@@ -32,8 +57,38 @@
   <polaris-chip title="Grants and donations"></polaris-chip>
 
   <h1>my-card</h1>
-  <my-card></my-card>
-
+  
+  <my-card id="duplicate" title="Clone Card"></my-card>
+  <my-card id="change-title" title="Change Title"></my-card>
+  <my-card id="change-Image" title="Change Image"></my-card>
+  <my-card id="Delete Card" title="Delete card"></my-card>
+  <my-card id="bgc-change" title="Change Background Color"></my-card>
+  <my-card id="bgc-change" title="Change Background Color" ></my-card>
+  <div class="wrapper">
+    <h2 id="card-title">
+      A Very Sunny Day
+    </h2>
+    <hr>
+    <img class="card-image" src="https://thewowstyle.com/wp-content/uploads/2015/01/nature.jpg">
+  
+  <div>
+    <a href='https://hax.psu.edu/'>
+  <button>Details</button>
+    </a>
+    <a href='https://hax.psu.edu/'>
+  <button>Details 2</button>
+    </a>
+    <hr>
+  </div>
+  <div class="card-text">
+      <p>
+      In this picture, I have a huge tree with long leaves. I love how bright it is with the sun. The pine trees are nice because I know for sure it will stay green in this area for the whole year. Also, I love the mountains in the background, it makes the background less dull.    
+    </p>
+  </div>
+  </div>
+    </div>
+   
+  </div>
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>
   <script type="module" src="./src/my-card.js"></script>

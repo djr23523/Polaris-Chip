@@ -30,6 +30,7 @@ export class PolarisChip extends LitElement {
     // a variable on this object called title
     this.title = 'Chip Default';
     this.link = '#';
+    this.shiny=false;
   }
 
   // CSS styles are scoped JUST to this element. This uses a technology called
@@ -49,7 +50,9 @@ export class PolarisChip extends LitElement {
         /* Always make sure that your element has a default way of being displayed */
         display: inline-flex;
       }
-
+      :host([shiny]) a{
+        background-color:yellow;
+      }
       a {
         background-color: orange;
         color: black;
@@ -96,7 +99,8 @@ export class PolarisChip extends LitElement {
     return {
       // this is a String. Array, Object, Number, Boolean are other valid values here
       title: { type: String },
-      link: { type: String }
+      link: { type: String },
+      shiny: {type : Boolean, reflect:true}
     };
   }
 }
