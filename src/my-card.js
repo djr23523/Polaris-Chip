@@ -14,9 +14,12 @@ export class MyCard extends LitElement {
 
   constructor() {
     super();
-    this.title = "My card";
-    this.id= "";
-    this.class="";
+    this.title = "";
+    this.image= null;
+    this.link='#';
+    this.buttonTitle="";
+    this.text="";
+    this.fancy=false;
   }
 
   static get styles() {
@@ -24,92 +27,90 @@ export class MyCard extends LitElement {
       :host {
         display: block;
       }
-      h2{
-        margin: 4px;
+      :host([fancy]) {
+        display:block;
+        background-color:pink;
+        border:2px solid fuchsia;
+        box-shadow: 10px 5px 5px red;
       }
-      .control-wrapper{
-      display:flex;
-        
+      img{
+        height:150px;
+        width:150px;
+      
       }
-      .wrapper{
-        background-color: orange;
-        margin:16px;
-        padding:8px;
-        
-        text-align:center;
-        
-      }
-      .fancy{
-        background-color:red;
-        margin:8px;
-        padding:4px;
-        text-align:right;
-      }
-      #card-title{
-        color:blue;
-        text-align:center;
-        font-family:Sans-serif;
-        
-      }
-      .card-image{
-        height: 40vh;
-        width: 200px;
-        padding: 25px;
-      }
-
-      .card-text{
-        color: blue;
-        text-align:center;
-        overflow:auto;
-      }
-
-      button:hover{
-        background-color:red;
-      }
-      button{
-        border:square;
-        display:inline-flex;
+      a{
         text-decoration:none;
+        border-radius:5px;
+      }  
+      
+      button{
+        display:inline-block;
+        color:white;
+        background-color:blue;
+        border-radius:6px;
         padding:4px;
-        border-radius:8px;
-        background-color:green; 
+        margin:4px;
       }
-      @media screen and (min-width:801px),(max-width:499px){
-        button{
-          display:none
-        }
+      details summary {
+        text-align: left;
+        font-size: 20px;
+        padding: 8px 0;
       }
-      @media screen and (max-height:499px){
-        html{
-          max-width:500px;
-          margin:auto;
-          
-        }
+
+      details[open] summary {
+        font-weight: bold;
+      }
+      {
+        color:blue;
+        font-size:16px;
+      }
+      details div {
+        border: 2px solid black;
+        text-align: left;
+        padding: 8px;
+        height: 70px;
+        overflow: auto;
+        color:blue;
       }
 
     `;
   }
-  paragraphTemplate(){
-
+  openChanged(e) {
+    console.log(e.newState);
+    if (e.newState === "open") {
+      this.fancy = true;
+    }
+    else {
+      this.fancy = false;
+    }
   }
-  header1Template(){
-
-  }
-  header2Template(){
-
-  }
-
+  
   render() {
     return html`
-    <button id=${this.id}>${this.title}</button>
+    <div>
+      <h3>${this.title}</h3>
+      <img src="${this.image}"><br>
+      <a href="${this.link}"><button>${this.buttonTitle}</button></a>
+      <details ?open="${this.fancy}" @toggle="${this.openChanged}" >
+      <summary>Description</summary>
+        <div>
+          <slot name="my-text">${this.text}</slot>
+        </div>
+      </details>
+    </div>
+    <slot></slot>
     `;
   }
 
   static get properties() {
     return {
-      id: {type: String },
       title: { type: String },
-      button: { type: String }
+      image: { type: String },
+      link: { type: String },
+      buttonTitle: { type: String },
+      text: { type: String },
+      fancy: { type: Boolean, reflect: true}
+      
     };
   }
 }

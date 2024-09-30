@@ -19,30 +19,16 @@
     polaris-chip {
       margin: 16px;
     }
-    .wrapper{
-        background-color: orange;
-        margin:16px;
-        padding:8px;
-        
-        text-align:center;
-        
-      }
-    #card-title{
-        color:blue;
-        text-align:center;
-        font-family:Sans-serif;
-        
-    }
-    .card-image{
-        height: 40vh;
-        width: 200px;
-        padding: 25px;
-    }
-
-    .card-text{
-        color: blue;
-        text-align:center;
-        overflow:auto;
+    my-card{
+      height: 40vh;
+      width: 200px;
+      
+      color: blue;
+      text-align:center;
+      overflow:auto;
+      background-color: orange;
+      margin:16px;
+      text-align:center;
     }
   </style>
   <title>polaris-chip / my-card</title>
@@ -58,37 +44,46 @@
 
   <h1>my-card</h1>
   
-  <my-card id="duplicate" title="Clone Card"></my-card>
-  <my-card id="change-title" title="Change Title"></my-card>
-  <my-card id="change-Image" title="Change Image"></my-card>
-  <my-card id="Delete Card" title="Delete card"></my-card>
-  <my-card id="bgc-change" title="Change Background Color"></my-card>
-  <my-card id="bgc-change" title="Change Background Color" ></my-card>
-  <div class="wrapper">
-    <h2 id="card-title">
-      A Very Sunny Day
-    </h2>
-    <hr>
-    <img class="card-image" src="https://thewowstyle.com/wp-content/uploads/2015/01/nature.jpg">
+  <my-card 
+    fancy
+    title= "A Very Sunny Day" 
+    image="https://thewowstyle.com/wp-content/uploads/2015/01/nature.jpg" 
+    link="https://hax.psu.edu/" 
+    buttonTitle="hax-psu" 
+    text="In this picture, I have a huge tree with long leaves. I love how bright it is with the sun. The pine trees are nice because I know for sure it will stay green in this area for the whole year. Also, I love the mountains in the background, it makes the background less dull." >
+  </my-card>
+
+  <my-card 
+    title= "Welcome to the Matrix" 
+    image="https://4.bp.blogspot.com/-avoot2jSrKY/UT1Hq2V5MbI/AAAAAAAAAFQ/3J1jV7xdHFA/s1600/MatrixBluePillRedPill.jpg" 
+    link="https://hax.psu.edu/" 
+    buttonTitle="hax-psu"  
+    text="Will you choose the red pill or the blue pill?" >
+  </my-card>
+  <my-card 
+    title= "Captain America vs Iron man" 
+    image="https://images.hdqwalls.com/download/captain-america-vs-iron-man-civil-war-3840x2400.jpg" 
+    link="https://hax.psu.edu/" 
+    buttonTitle="hax-psu"  
+    text="Cap: 'He was my Friend' Iron man: 'So was I'">
+  </my-card>
+  <my-card 
+    title= "This is not a joke" 
+    image="https://i.imgflip.com/2xcxa1.jpg" 
+    link="https://hax.psu.edu/" 
+    buttonTitle="hax-psu" 
+    text="^ Its true. Millions of people lose their identity every year.">
+  </my-card>
+  <my-card 
+    title= "Very Relatable" 
+    image="https://i.imgflip.com/3lrjoe.jpg" 
+    link="https://hax.psu.edu/" 
+    buttonTitle="hax-psu" 
+    text="This is so true for me every monday">
+  </my-card>
+
+ 
   
-  <div>
-    <a href='https://hax.psu.edu/'>
-  <button>Details</button>
-    </a>
-    <a href='https://hax.psu.edu/'>
-  <button>Details 2</button>
-    </a>
-    <hr>
-  </div>
-  <div class="card-text">
-      <p>
-      In this picture, I have a huge tree with long leaves. I love how bright it is with the sun. The pine trees are nice because I know for sure it will stay green in this area for the whole year. Also, I love the mountains in the background, it makes the background less dull.    
-    </p>
-  </div>
-  </div>
-    </div>
-   
-  </div>
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>
   <script type="module" src="./src/my-card.js"></script>
